@@ -1,0 +1,9 @@
+Image: localhost:5000/stream-bench
+Runtime: docker
+Start Time (ms): 1757203907817
+Ready Time (ms): 1757203907799
+Startup Time (ms): 0
+Total Time (ms): 0
+STREAM_READY_AT:1757203910410
+sh: 1: /stream/stream_c: not found
+----------------------------------------

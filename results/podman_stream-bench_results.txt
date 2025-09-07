@@ -1,0 +1,9 @@
+Image: localhost:5000/stream-bench
+Runtime: podman
+Start Time (ms): 1757203896777
+Ready Time (ms): 1757203896755
+Startup Time (ms): 0
+Total Time (ms): 0
+STREAM_READY_AT:1757203897689
+sh: 1: /stream/stream_c: not found
+----------------------------------------

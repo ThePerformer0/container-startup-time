@@ -12,7 +12,7 @@ rm -rf "$DBENCH_MOUNTPOINT"/*
 echo "Nettoyage terminé."
 echo ""
 
-echo "FIO_BENCHMARK_READY_AT:$(/usr/bin/date +%s%3N)" >&2
+echo "FIO_BENCHMARK_READY_AT:$(date +%s%3N)" >&2
 
 echo "--- Démarrage des benchmarks FIO ---"
 

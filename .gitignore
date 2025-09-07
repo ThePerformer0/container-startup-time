@@ -1,5 +1,5 @@
 # ignorer les fichiers de résultats
-results/
+
 # ignorer les fichiers de logs
 *.log
 
@@ -9,3 +9,5 @@ ipc-bench/
 
 # ignorer les fichiers temporaires
 *.tmp
+
+*.tar
