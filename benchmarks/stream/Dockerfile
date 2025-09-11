@@ -14,4 +14,4 @@ RUN git clone https://github.com/jeffhammond/STREAM.git /stream && \
 ENV STREAM_ARRAY_SIZE="1000000"
 ENV STREAM_ITERATIONS="100"
 
-CMD ["sh", "-c", "echo \"STREAM_READY_AT:$(/usr/bin/date +%s%3N)\" >&2 && /stream/stream_c | head -n 10"]
+CMD ["sh", "-c", "echo \"STREAM_READY_AT:$(/usr/bin/date +%s%3N)\" >&2 && /stream/stream_c | head -n 10 && echo \"STREAM_FINISHED_AT:$(/usr/bin/date +%s%3N)\" >&2"]

@@ -20,4 +20,4 @@ RUN git clone --depth 1 --branch "$UNIXBENCH_VERSION" \
     make
 
 WORKDIR /benchmark/byte-unixbench/UnixBench
-CMD ["sh", "-c", "echo \"UNIXBENCH_READY_AT:$(date +%s%3N)\" >&2 && ./Run | head -n 10"]
+CMD ["sh", "-c", "echo \"UNIXBENCH_READY_AT:$(date +%s%3N)\" >&2 && ./Run | head -n 10 && echo \"UNIXBENCH_FINISHED_AT:$(date +%s%3N)\" >&2"]

@@ -6,13 +6,15 @@ FIO_OFFSET_INCREMENT="${FIO_OFFSET_INCREMENT:-64M}"
 FIO_DIRECT="${FIO_DIRECT:-1}"
 TH="${TH:-1}"
 
+# Marqueur de disponibilité au plus tôt afin de mesurer majoritairement le temps de préparation du moteur
+echo "FIO_BENCHMARK_READY_AT:$(date +%s%3N)" >&2
+
+# Préparation (I/O locale, hors périmètre temps de démarrage moteur)
 echo "Préparation du répertoire de travail FIO: $DBENCH_MOUNTPOINT"
 mkdir -p "$DBENCH_MOUNTPOINT"
 rm -rf "$DBENCH_MOUNTPOINT"/*
 echo "Nettoyage terminé."
 echo ""
-
-echo "FIO_BENCHMARK_READY_AT:$(date +%s%3N)" >&2
 
 echo "--- Démarrage des benchmarks FIO ---"
 
@@ -33,3 +35,5 @@ fio --name=randwrite_4k \
 echo "--- Benchmarks FIO terminés ---"
 
 rm -rf "$DBENCH_MOUNTPOINT"/*
+
+echo "FIO_BENCHMARK_FINISHED_AT:$(date +%s%3N)" >&2

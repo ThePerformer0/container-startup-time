@@ -11,3 +11,4 @@ ipc-bench/
 *.tmp
 
 *.tar
+*csv
