@@ -3,8 +3,7 @@
 # ignorer les fichiers de logs
 *.log
 
-
-FlameGraph/
+flameGraph/
 ipc-bench/
 
 # ignorer les fichiers temporaires
@@ -12,3 +11,7 @@ ipc-bench/
 
 *.tar
 *csv
+trace/
+*.svg
+perf.data
+perf.data.old

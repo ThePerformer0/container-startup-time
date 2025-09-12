@@ -110,7 +110,10 @@ EOF
     sleep 1
   done
 
-  logs=$(sudo crictl logs --stderr "$ctr_id" 2>&1 || true)
+  stdout_logs=$(sudo crictl logs "$ctr_id" 2>&1 || true)
+  stderr_logs=$(sudo crictl logs --stderr "$ctr_id" 2>&1 || true)
+  logs="$stdout_logs
+$stderr_logs"
   end_ms=$(date +%s%3N)
   read -r ready_ms finished_ms < <(extract_times "$logs" "$end_ms")
   if [[ $start_ms -le $ready_ms && $ready_ms -le $finished_ms && $finished_ms -le $end_ms ]]; then
@@ -134,4 +137,4 @@ main() {
   echo "CSV écrit: $CSV_FILE"
 }
 
-main "$@" 
+main "$@"
